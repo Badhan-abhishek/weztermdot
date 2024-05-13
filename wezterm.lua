@@ -1,0 +1,29 @@
+local wezterm = require("wezterm")
+local config = wezterm.config_builder()
+
+local ui = require("ui")
+local keys = require("keys")
+
+config = ui
+config.keys = keys
+
+local function scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "Builtin Solarized Dark"
+	else
+		return "Builtin Solarized Light"
+	end
+end
+
+wezterm.on("window-config-reloaded", function(window, pane)
+	local overrides = window:get_config_overrides() or {}
+	local appearance = window:get_appearance()
+	local scheme = scheme_for_appearance(appearance)
+	if overrides.color_scheme ~= scheme then
+		overrides.color_scheme = scheme
+		window:set_config_overrides(overrides)
+	end
+end)
+
+-- and finally, return the configuration to wezterm
+return config

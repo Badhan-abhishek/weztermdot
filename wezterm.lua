@@ -7,15 +7,19 @@ local keys = require("keys")
 config = ui
 config.keys = keys
 
+config.set_environment_variables = {
+	PATH = "/Applications/WezTerm.app/Contents/MacOS/:" .. os.getenv("PATH"),
+}
+
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Builtin Solarized Dark"
+		return "Kanagawa (Gogh)"
 	else
 		return "Builtin Solarized Light"
 	end
 end
 
-wezterm.on("window-config-reloaded", function(window, pane)
+wezterm.on("window-config-reloaded", function(window)
 	local overrides = window:get_config_overrides() or {}
 	local appearance = window:get_appearance()
 	local scheme = scheme_for_appearance(appearance)

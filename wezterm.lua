@@ -7,13 +7,15 @@ local keys = require("keys")
 config = ui
 config.keys = keys
 
+config.automatically_reload_config = true
+
 config.set_environment_variables = {
 	PATH = "/Applications/WezTerm.app/Contents/MacOS/:" .. os.getenv("PATH"),
 }
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Kanagawa (Gogh)"
+		return "Seti"
 	else
 		return "Builtin Solarized Light"
 	end
@@ -29,5 +31,4 @@ wezterm.on("window-config-reloaded", function(window)
 	end
 end)
 
--- and finally, return the configuration to wezterm
 return config

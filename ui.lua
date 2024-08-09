@@ -27,7 +27,7 @@ M = {
 	background = {
 		{
 			source = {
-				File = "/Users/cuilsoft/.config/wezterm/assets/bg_1.jpg",
+				File = "/Users/abhishek/.config/wezterm/assets/bg_1.jpg",
 			},
 			repeat_x = "NoRepeat",
 			hsb = dimmer,

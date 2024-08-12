@@ -2,7 +2,9 @@ local wezterm = require("wezterm")
 
 local M = {}
 
-local dimmer = { brightness = 0.04 }
+local dimmer = { brightness = 0.02 }
+
+local background_image_name = "bg_5.jpeg"
 
 M = {
 	window_frame = {
@@ -20,14 +22,14 @@ M = {
 	},
 
 	font = wezterm.font_with_fallback({
-		"Geist Mono",
+		"PlemolJP35 Console NF",
 		"JetBrains Mono",
 	}),
 
 	background = {
 		{
 			source = {
-				File = "/Users/abhishek/.config/wezterm/assets/bg_1.jpg",
+				File = "/Users/abhishek/.config/wezterm/assets/" .. background_image_name,
 			},
 			repeat_x = "NoRepeat",
 			hsb = dimmer,

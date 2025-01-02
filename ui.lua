@@ -4,7 +4,7 @@ local M = {}
 
 local dimmer = { brightness = 0.02 }
 
-local background_image_name = "bg_5.jpeg"
+local background_image_name = "bg_4.jpg"
 
 M = {
 	window_frame = {
@@ -22,19 +22,19 @@ M = {
 	},
 
 	font = wezterm.font_with_fallback({
-		"PlemolJP35 Console NF",
+		"Monaspace Neon",
 		"JetBrains Mono",
 	}),
 
-	background = {
-		{
-			source = {
-				File = "/Users/abhishek/.config/wezterm/assets/" .. background_image_name,
-			},
-			repeat_x = "NoRepeat",
-			hsb = dimmer,
-		},
-	},
+	-- background = {
+	-- 	{
+	-- 		source = {
+	-- 			File = "/Users/abhishek/.config/wezterm/assets/" .. background_image_name,
+	-- 		},
+	-- 		repeat_x = "NoRepeat",
+	-- 		hsb = dimmer,
+	-- 	},
+	-- },
 }
 
 return M

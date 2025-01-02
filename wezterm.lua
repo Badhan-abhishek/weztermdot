@@ -13,11 +13,18 @@ config.set_environment_variables = {
 	PATH = "/Applications/WezTerm.app/Contents/MacOS/:" .. os.getenv("PATH"),
 }
 
+config.window_padding = {
+	right = 0,
+	left = 0,
+	top = 0,
+	bottom = 0,
+}
+
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
 		return "Seti"
 	else
-		return "Builtin Solarized Light"
+		return "Night Owlish Light"
 	end
 end
 
